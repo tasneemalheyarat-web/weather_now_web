@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header wrapper">
+    <div class="header__content">
+      <button id="btnTheme" class="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme"></button>
+      <a class="header__homelink" href="/">
+        <img class="header__logo" src="/assets/images/logo.svg" alt="Weather Now Home" width="197" height="40">
+      </a>
+      <select class="dropdown header__dropdown" name="units" id="ddlUnits">
+        <option value="">Units</option>
+        <option value="C">&deg;C</option>
+        <option value="F">&deg;F</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="main" class="main wrapper">
+
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">How's the sky looking today?</h1>
+        <div class="autocomplete-wrapper">
+          <input class="hero__textbox" type="text" name="search" id="txtSearch" placeholder="Search for a place..." autocomplete="off">
+          <div id="autocompleteList" class="autocomplete-list" style="display:none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="dashboard">
+      <section class="current">
+        <h2 class="visually-hidden">Current Location Temperature</h2>
+
+        <div class="current__weather">
+          <div class="current__location">
+            <div id="dvCityCountry" class="current__city">Berlin, Germany</div>
+            <div id="dvCurrDate" class="current__date">Tuesday, Aug 5, 2025</div>
+          </div>
+          <div class="current__info">
+            <img class="current__icon" src="/assets/images/icon-sunny.webp" alt="" width="320" height="320">
+            <div class="current__temp"><span id="dvCurrTemp">20</span>&deg;</div>
+          </div>
+        </div>
+
+        <div class="current__conditions">
+          <div class="block current__condition">
+            <p class="current__condition-title">Feels Like</p>
+            <p class="current__condition-value"><span id="pFeelsLike"></span>&deg;</p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Humidity</p>
+            <p class="current__condition-value"><span id="pHumidity"></span>%</p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Wind</p>
+            <p id="pWind" class="current__condition-value"></p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Precipitation</p>
+            <p id="pPrecipitation" class="current__condition-value"></p>
+          </div>
+        </div>
+
+        <!-- ===== HOURLY FORECAST ===== -->
+        <div class="hourly block">
+          <h2 class="hourly__title">Hourly forecast</h2>
+          <div id="dvHourlyForecast" class="hourly__row"></div>
+        </div>
+
+      </section>
+
+      <section class="daily">
+        <h2 class="section__title daily__title">Daily forecast</h2>
+        <div class="daily__forecast">
+          <div id="dvForecastDay1" class="block daily__day"></div>
+          <div id="dvForecastDay2" class="block daily__day"></div>
+          <div id="dvForecastDay3" class="block daily__day"></div>
+          <div id="dvForecastDay4" class="block daily__day"></div>
+          <div id="dvForecastDay5" class="block daily__day"></div>
+          <div id="dvForecastDay6" class="block daily__day"></div>
+          <div id="dvForecastDay7" class="block daily__day"></div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+</body>
+</html>
